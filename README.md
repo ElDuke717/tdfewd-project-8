@@ -1,2 +1,4 @@
 # tdfewd-project-8
- The eighth project in the Treehouse Front End Web Developer Techdegree
+This is the eighth project in Treehouse's Front End Web Developer TechDegree.
+
+
