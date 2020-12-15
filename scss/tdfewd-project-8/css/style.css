@@ -2,6 +2,15 @@
 /*   Sub-Folder Imports   */
 /*=====================================*/
 /*=====================================*/
+/*   Utilities Imports */
+/*=====================================*/
+/*================================
+Color Variables
+==================================*/
+/*================================
+fonts
+==================================*/
+/*=====================================*/
 /*   Base Imports   */
 /*=====================================*/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -343,14 +352,15 @@ template {
   display: none;
 }
 
-/*======================
-Variables
-========================*/
+/*================================
+Typography and Fonts
+=================================*/
+.card {
+  font-family: Roboto, sans-serif;
+}
 
-:root{
-  --text-color-primary: rgb(89, 89, 102);
-  --border-color: rgb(248, 244, 244);
-  --shadow-color: rgb(247, 247, 247);
+.title {
+  font-family: Roboto, sans-serif;
 }
 
 /*======================
@@ -360,50 +370,9 @@ body {
   position: relative;
 }
 
-.title {
-  margin-left: 50px;
-  font-size: 1.5em;
-  text-transform: uppercase;
-  color: var(--text-color-primary);
-}
-
-.name {
-  color: var(--text-color-primary);
-}
-
-
-.card {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  border: 2px solid var(--border-color);
-  border-radius: 5px;
-  box-shadow: 2px 2px 2px rgb(247, 247, 247);
-}
-
-.text-container {
-  margin: 5px;
-}
-
 /*=====================================*/
 /*   Components Imports */
 /*=====================================*/
-/*================================
-Typography and Fonts
-=================================*/
-
-.card {
-  font-family: Ubuntu, sans-serif;
-}
-
-.title {
-  font-family: Ubuntu, sans-serif;
-}
-
-.name {
-  font-size: 1em;
-}
-
 /* =================================
   Overlay Styling
 ==================================== */
@@ -438,38 +407,12 @@ Typography and Fonts
   display: none;
 }
 
-.avatar {
-  border-radius: 50% 50%;
-  height: 85px;
-  width: 85px;
-  margin: 5px;
-}
-
 /* =================================
  Grid Layout
 ==================================== */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 300px);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 15px;
-  justify-content: center;
-  margin: auto;
-  /* grid-template-areas:
-    ". . ."
-    ". . ."
-    ". . ."
-    ". . ."; */
 }
-
-
-
-
-/* =================================
-Media Queries
-==================================== */
-
-
 
 /*# sourceMappingURL=style.css.map */
 
