@@ -1,10 +1,10 @@
 //global variables
-let employes = [];
-const urlAPI = `https://randomuser.me/api.?results=12&inc=name, picture, email, location, phone, dob &noinfo &nat=US`
+let employees = [];
+const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture, email, location, phone, dob &noinfo &nat=us`
 const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-content");
-const modalClose = document.querySelector("modal-close");
+const modalClose = document.querySelector(".modal-close");
 
 //fetch data from API
 
@@ -12,7 +12,7 @@ fetch(urlAPI)
     .then(res => res.json())
     .then(res => res.results)
     .then(displayEmployees)
-    .catch(err => console.lot(err))
+    .catch(err => console.log(err))
 
 function displayEmployees(employeeData) {
     employees = employeeData;
@@ -51,15 +51,16 @@ function displayModal(index) {
     let date = new Date(dob.date);
 
     const modalHTML = `
-        <img class="avatar" src="{picture.large}"/>
+        <img class="avatar" src="${picture.large}"/>
         <div class="text-container">
             <h2 class="name">${name.first} ${name.last}</h2>
+            <h2 class="name">Slack: @${name.first}.${name.last.charAt(0)}</h2>
             <p class="email">${email}</p>
-            <p class="address">${city}</p>
             <hr />
             <p>${phone}</p>
-            <p class="address">${street}, ${state} ${postcode}</p>
-            <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
+            <p class="address">${street.number} ${street.name}</p>
+            <p class="address">${city}, ${state} ${postcode}</p>
+            <p>Birthday: ${date.getMonth() +1}/${date.getDate()}/${date.getFullYear()}</p>
         </div>
             `;
     overlay.classList.remove("hidden");
@@ -82,3 +83,5 @@ gridContainer.addEventListener('click', e => {
 modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
 });
+
+console.log(fetch(urlAPI));

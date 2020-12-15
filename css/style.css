@@ -376,7 +376,7 @@ body {
 
 .card {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   border: 2px solid var(--border-color);
   border-radius: 5px;
@@ -384,8 +384,17 @@ body {
   background-color:var(--card-color);
 }
 
+.card:hover {
+  background-color: var(--border-color);
+  transform: scale(1.02);
+}
+
+.modal {
+  font-family: Ubuntu, sans-serif;
+}
+
 .text-container {
-  margin: 5px;
+  margin: 15px 15px 15px 2px;
 }
 
 /*=====================================*/
@@ -453,7 +462,7 @@ Typography and Fonts
   border-radius: 50% 50%;
   height: 100px;
   width: 100px;
-  margin: 5px;
+  margin: 15px;
 }
 
 /* =================================
