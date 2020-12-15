@@ -351,6 +351,7 @@ Variables
   --text-color-primary: rgb(89, 89, 102);
   --border-color: rgb(248, 244, 244);
   --shadow-color: rgb(247, 247, 247);
+  --card-color: #ffffff;
 }
 
 /*======================
@@ -358,6 +359,7 @@ Base Layout
 ========================*/
 body {
   position: relative;
+  background-color: rgb(253, 253, 253);
 }
 
 .title {
@@ -379,6 +381,7 @@ body {
   border: 2px solid var(--border-color);
   border-radius: 5px;
   box-shadow: 2px 2px 2px rgb(247, 247, 247);
+  background-color:var(--card-color);
 }
 
 .text-container {
@@ -400,8 +403,16 @@ Typography and Fonts
   font-family: Ubuntu, sans-serif;
 }
 
+.email,
+.address {
+  font-size: .75em;
+  margin: 5px 0px;
+}
+
+
 .name {
   font-size: 1em;
+  font-weight: bolder;
 }
 
 /* =================================
@@ -440,36 +451,55 @@ Typography and Fonts
 
 .avatar {
   border-radius: 50% 50%;
-  height: 85px;
-  width: 85px;
+  height: 100px;
+  width: 100px;
   margin: 5px;
 }
 
 /* =================================
  Grid Layout
 ==================================== */
+/* Styling starts at 320px and each media query builds from here. */
+
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 300px);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 315px);
+  grid-template-rows: repeat(autofit, minmax(160px, 1fr));
   gap: 15px;
   justify-content: center;
   margin: auto;
-  /* grid-template-areas:
-    ". . ."
-    ". . ."
-    ". . ."
-    ". . ."; */
+  
 }
-
-
-
 
 /* =================================
 Media Queries
 ==================================== */
 
+/* Builds off grid parameters set for 320px */
 
+@media (min-width: 768px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    grid-template-rows: repeat(6, minmax(160px, 1fr));
+    grid-gap: 15px;
+    justify-content: center;
+    margin: auto;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 320px);
+    grid-template-rows: repeat(4, minmax(160px, 1fr));
+    grid-gap: 15px;
+    justify-content: center;
+    margin: auto;
+  }
+
+}
 
 /*# sourceMappingURL=style.css.map */
 
