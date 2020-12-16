@@ -369,6 +369,18 @@ body {
   color: var(--text-color-primary);
 }
 
+.search {
+  display: flex;
+  justify-content: center;
+  padding: 6px 10px;
+  margin-left: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 15px;
+  font-family: Ubuntu, sans-serif;
+  cursor: pointer;
+}
+
 .name {
   color: var(--text-color-primary);
 }
@@ -462,6 +474,13 @@ Typography and Fonts
   border-radius: 50% 50%;
   height: 100px;
   width: 100px;
+  margin: 15px;
+}
+
+.avatar-select {
+  border-radius: 50% 50%;
+  height: 150px;
+  width: 150px;
   margin: 15px;
 }
 

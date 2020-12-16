@@ -51,7 +51,7 @@ function displayModal(index) {
     let date = new Date(dob.date);
 
     const modalHTML = `
-        <img class="avatar" src="${picture.large}"/>
+        <img class="avatar-select" src="${picture.large}"/>
         <div class="text-container">
             <h2 class="name">${name.first} ${name.last}</h2>
             <h2 class="name">Slack: @${name.first}.${name.last.charAt(0)}</h2>
