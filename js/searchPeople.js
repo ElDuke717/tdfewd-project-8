@@ -1,19 +1,22 @@
 // This function searches the photos based on input into the search bar.
 
-function searchPhotos() {
-    //This sets a variable based on what's entered into the search.
+function searchPeople() {
+    //This variable is set based on what's entered into the search input box.
     const searchInput = document.querySelector(".search").value;
     
-    //This variable is made to work in the logic of the function - if it matches a caption, the function's logic is true.
-    const caption = document.querySelectorAll(".gallery a");    
-    
-    //This loop includes logic that looks for input from the captions and matches it up with the searchInput.
+    //This variable pulls up a nodeList that is used to access the names taken from the randomNames API.
+    const caption = document.querySelectorAll(".name");    
+ 
+    //Sets a variable to display the card for the search
+    const card = document.querySelectorAll(".card");
+   
+        //This loop includes logic that looks for input from the captions and matches it up with the searchInput.
     for (let i = 0; i < caption.length; i++) {
-    if (caption[i].getAttribute("data-caption").toLowerCase().includes(searchInput.toLowerCase()) ) {
-    caption[i].style.display = "block";
+    if (caption[i].innerHTML.toLowerCase().includes(searchInput.toLowerCase()) ) {
+    card[i].style.display = "";
     } else {
-    caption[i].style.display = "none";
-    }
-    }
+    card[i].style.display = "none";
+       }
     }
     
+}
