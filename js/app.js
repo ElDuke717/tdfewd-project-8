@@ -14,6 +14,9 @@ fetch(urlAPI)
     .then(displayEmployees)
     .catch(err => console.log(err))
 
+
+
+
 function displayEmployees(employeeData) {
     employees = employeeData;
 
@@ -43,6 +46,8 @@ employeeHTML += `
     gridContainer.innerHTML = employeeHTML;
 }
 
+
+
 function displayModal(index) {
 
     //use object destructuring to make the template cleaner
@@ -61,11 +66,37 @@ function displayModal(index) {
             <p class="address">${street.number} ${street.name}</p>
             <p class="address">${city}, ${state} ${postcode}</p>
             <p>Birthday: ${date.getMonth() +1}/${date.getDate()}/${date.getFullYear()}</p>
+            <button class="prev">Previous</button>
+            <button class="next">Next</button>
         </div>
-            `;
+    `;
     overlay.classList.remove("hidden");
     modalContainer.innerHTML = modalHTML;
+
+    const previous = document.querySelector('.prev');
+    previous.addEventListener('click', e => {
+        if (index > 0) {
+            index--;
+            displayModal(index);
+        } else {
+            index = employees.length - 1;
+            displayModal(index);
+        }
+    });
+    
+    const next = document.querySelector('.next');
+    next.addEventListener('click', e => {
+      if(index < employees.length -1) { 
+        index++;
+        displayModal(index);
+      } else {
+          index = 0;
+          displayModal(index);
+      }
+    });
+
 }
+
 
 gridContainer.addEventListener('click', e => {
 
@@ -80,8 +111,11 @@ gridContainer.addEventListener('click', e => {
     }
 });
 
+
 modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
+    console.log('modal closed!');
 });
 
-console.log(fetch(urlAPI));
+console.log(previous);
+console.log(next);
