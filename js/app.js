@@ -114,8 +114,6 @@ gridContainer.addEventListener('click', e => {
 
 modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
-    console.log('modal closed!');
 });
 
-console.log(previous);
-console.log(next);
+
